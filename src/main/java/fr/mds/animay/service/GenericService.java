@@ -8,9 +8,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public class GenericService<E extends IdEntity<ID>, ID, R extends JpaRepository<E, ID>> {
+public abstract class GenericService<E extends IdEntity<ID>, ID, R extends JpaRepository<E, ID>> {
 
-    private final R repository;
+    protected final R repository;
 
     @Autowired
     public GenericService(R repository) {
